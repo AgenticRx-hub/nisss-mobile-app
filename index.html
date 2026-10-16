@@ -128,12 +128,17 @@ input[type=range]{width:100%}
 .bar{height:10px;border-radius:9px;background:#e6eaef;overflow:hidden}
 .bar i{display:block;height:100%;background:var(--gold)}
 svg text{font-family:inherit}
+.banner-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,560px);border-radius:18px;overflow:hidden;background:linear-gradient(135deg,#00267f,#0b4fb3 70%,#0aa3c2);color:#fff;margin:0 0 18px;align-items:stretch}
+.banner-split .txt{padding:26px 26px 24px;display:flex;flex-direction:column;justify-content:center}
+.banner-split .txt h2{color:#fff;margin:4px 0 8px}.banner-split .txt p{margin:0;color:#e3eeff;max-width:60ch}
+.banner-split img{width:100%;height:100%;max-height:330px;object-fit:cover;display:block}
+@media (max-width:820px){.banner-split{grid-template-columns:minmax(0,1fr)}.banner-split img{max-height:260px}}
 .banner-img{position:relative;border-radius:18px;overflow:hidden;margin:0 0 16px;min-height:200px;background:#0d2a46 center/cover no-repeat;color:#fff;display:flex;align-items:flex-end}
 .banner-img .cap{padding:18px 20px;background:linear-gradient(180deg,rgba(0,20,60,0),rgba(0,20,60,.88) 45%);width:100%}
 .banner-img .cap h2{color:#fff;margin:0 0 4px}.banner-img .cap p{margin:0;color:#e3eeff;max-width:70ch}
 .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:14px;margin:14px 0}
 .gallery figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
-.gallery img{width:100%;height:190px;object-fit:cover;display:block}
+.gallery img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:center top;display:block}.gallery img.mid{object-position:center}
 .gallery figcaption{padding:12px 14px;font-size:13.5px;color:var(--muted)}
 .gallery figcaption b{display:block;font-size:15px;color:var(--ink);margin-bottom:4px}
 .gallery ul{margin:6px 0 0;padding-left:18px}
@@ -281,7 +286,7 @@ footer.foot{max-width:1240px;margin:0 auto;padding:20px 16px 40px;color:var(--mu
  <div class="gallery">
   <figure><img src="img/centenarians.jpg" alt="Barbados Postal Service stamps honouring Barbadian centenarians" loading="lazy"><figcaption><b>Seniors and pensioners</b>Barbados has one of the highest numbers of centenarians per head in the world. Simple mode, large text, read-aloud, a trusted helper and digital life certificates make the app easy at any age.</figcaption></figure>
   <figure><img src="img/youth.jpg" alt="Young Barbadian athletes celebrating with the national flag" loading="lazy"><figcaption><b>Young people starting work</b>School leavers get their NIS number, see their first contributions and learn how social security protects them, in plain language and on any phone.</figcaption></figure>
-  <figure><img src="img/chattel.jpg" alt="Colourful chattel house display with a QR code for Crop Over" loading="lazy"><figcaption><b>Self-employed, vendors and gig workers</b>Register free, pay any amount at any time under the Flexible Arrangement, and pay with cash at SurePay agents using a QR or payment code. Short and multi-employer work is ready to count under the Portable Benefits Framework.</figcaption></figure>
+  <figure><img class="mid" src="img/chattel.jpg" alt="Colourful chattel house display with a QR code for Crop Over" loading="lazy"><figcaption><b>Self-employed, vendors and gig workers</b>Register free, pay any amount at any time under the Flexible Arrangement, and pay with cash at SurePay agents using a QR or payment code. Short and multi-employer work is ready to count under the Portable Benefits Framework.</figcaption></figure>
  </div>
  <h3>Built-in inclusion toolkit</h3>
  <div class="feat">
@@ -311,7 +316,7 @@ footer.foot{max-width:1240px;margin:0 auto;padding:20px 16px 40px;color:var(--mu
 
 <!-- ================= TRIDENT ================= -->
 <section id="sec-trident" data-section hidden>
- <div class="banner-img" style="background-image:url(img/parliament.jpg)"><div class="cap"><div class="req" style="color:#ffc726">Barbados Identity Management Act · Data Protection Act, 2019 · RFB §1.4.3</div><h2>Trident ID, tiered data and privacy by design</h2><p>Built on Barbados law: the member's national ID is the key, and the member decides what is shared, every time.</p></div></div>
+ <div class="banner-split"><div class="txt"><div class="req" style="color:#ffc726">Barbados Identity Management Act · Data Protection Act, 2019 · RFB §1.4.3</div><h2>Trident ID, tiered data and privacy by design</h2><p>Built on Barbados law: the member's national ID is the key, and the member decides what is shared, every time.</p></div><img src="img/parliament.jpg" alt="Parliament Buildings, Bridgetown"></div>
  <div class="grid2" style="grid-template-columns:1fr 1fr">
   <div class="card"><h3 style="margin-top:0">What Trident ID provides</h3>
    <ul style="margin:0;padding-left:18px">
@@ -354,7 +359,7 @@ footer.foot{max-width:1240px;margin:0 auto;padding:20px 16px 40px;color:var(--mu
 
 <!-- ================= ABROAD ================= -->
 <section id="sec-abroad" data-section hidden>
- <div class="banner-img" style="background-image:url(img/careenage.jpg)"><div class="cap"><div class="req" style="color:#ffc726">Optional enhancements proposed under the RFB "Purchaser's Requirements"</div><h2>For Barbadians across the Caribbean and in the diaspora</h2><p>Home is always one tap away, wherever members live and work.</p></div></div>
+ <div class="banner-split"><div class="txt"><div class="req" style="color:#ffc726">Optional enhancements proposed under the RFB "Purchaser's Requirements"</div><h2>For Barbadians across the Caribbean and in the diaspora</h2><p>Home is always one tap away, wherever members live and work.</p></div><img src="img/careenage.jpg" alt="The Careenage and Chamberlain Bridge, Bridgetown"></div>
  <p class="lead">Many contributors and pensioners live in other CARICOM states, North America or the UK. The app lets them deal with NISSS without travelling home or posting forms. Try each one in the phone on the Mobile app tab.</p>
  <div class="feat">
   <div class="card"><div class="ic">$</div><h4>Pay from abroad</h4><p>Pay in USD, CAD or GBP by international card. The app shows the BBD amount credited before you confirm. <a href="#" data-try="abroad">Try it</a></p></div>
