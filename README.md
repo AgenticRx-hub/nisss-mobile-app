@@ -7,12 +7,14 @@ Bid for RFP No. **NISSS13/15_2026_02** — *Design and Development of a Mobile A
 
 ## Live prototype
 
-Open **[the working prototype](https://agenticrx-hub.github.io/nisss-mobile-app/)** (GitHub Pages). It has nine views:
+Open **[the working prototype](https://agenticrx-hub.github.io/nisss-mobile-app/)** (GitHub Pages). It has eleven views:
 
 | View | What it shows | RFB reference |
 |---|---|---|
 | [Overview](https://agenticrx-hub.github.io/nisss-mobile-app/#home) | What members can do, and the targets the design meets | — |
 | [Mobile app](https://agenticrx-hub.github.io/nisss-mobile-app/#app) | Sign-in with MFA, pay-first dashboard, contributions, payments and receipts, pension estimator, notifications, support chat, information services, account, claims (Phase 2), digital NIS card, clearance certificate | §1.2 |
+| [For everyone](https://agenticrx-hub.github.io/nisss-mobile-app/#everyone) | Inclusive design: Simple mode, text size, high contrast, read-aloud, trusted helper, basic-phone service, assisted service, cash payments | WCAG 2.2 AA |
+| [Trident ID and privacy](https://agenticrx-hub.github.io/nisss-mobile-app/#trident) | Sign-in with Trident ID, tiered consent (identity, social security, financial, health), security and privacy in every module | §1.4.3, Data Protection Act |
 | [Caribbean and diaspora](https://agenticrx-hub.github.io/nisss-mobile-app/#abroad) | Pay from abroad (USD, CAD, GBP), overseas sign-in codes, digital life certificate, CARICOM service record, secure connection check with trusted VPN | Optional add-ons |
 | [Integrations](https://agenticrx-hub.github.io/nisss-mobile-app/#int) | Integrations active in the prototype, in the contract, and optional | §2.3, §0.4 |
 | [Admin and CMS](https://agenticrx-hub.github.io/nisss-mobile-app/#admin) | Content queue with approval workflow, role-based access, audit trail | §1.4.2, §3.1.7 |
@@ -25,6 +27,7 @@ Open **[the working prototype](https://agenticrx-hub.github.io/nisss-mobile-app/
 
 ```
 index.html                     Working prototype (single file, no build step)
+img/                           Photographs used in the prototype
 docs/
   architecture.md              Logical, deployment and mobile module architecture
   security.md                  Security architecture, ISO 27001/27002 and OWASP MASVS mapping

@@ -64,7 +64,7 @@ main{max-width:1240px;margin:0 auto;padding:22px 16px 60px}
 h2{font:600 26px/1.25 Georgia,serif;margin:4px 0 8px}
 h3{font-size:16px;margin:18px 0 6px}
 .lead{color:var(--muted);max-width:68ch}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;min-width:0;overflow-x:auto}
 .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:14px 0}
 .kpi .v{font:600 22px/1.2 Georgia,serif}
 .kpi .l{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.06em}
@@ -128,6 +128,38 @@ input[type=range]{width:100%}
 .bar{height:10px;border-radius:9px;background:#e6eaef;overflow:hidden}
 .bar i{display:block;height:100%;background:var(--gold)}
 svg text{font-family:inherit}
+.banner-img{position:relative;border-radius:18px;overflow:hidden;margin:0 0 16px;min-height:200px;background:#0d2a46 center/cover no-repeat;color:#fff;display:flex;align-items:flex-end}
+.banner-img .cap{padding:18px 20px;background:linear-gradient(180deg,rgba(0,20,60,0),rgba(0,20,60,.88) 45%);width:100%}
+.banner-img .cap h2{color:#fff;margin:0 0 4px}.banner-img .cap p{margin:0;color:#e3eeff;max-width:70ch}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:14px;margin:14px 0}
+.gallery figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.gallery img{width:100%;height:190px;object-fit:cover;display:block}
+.gallery figcaption{padding:12px 14px;font-size:13.5px;color:var(--muted)}
+.gallery figcaption b{display:block;font-size:15px;color:var(--ink);margin-bottom:4px}
+.gallery ul{margin:6px 0 0;padding-left:18px}
+.tier td:first-child{white-space:nowrap;font-weight:700}
+.tchip{display:inline-block;border-radius:8px;padding:2px 8px;font-size:12px;font-weight:700;color:#fff}
+.fphone{width:220px;margin:0 auto;background:#222;border-radius:26px;padding:16px 14px 22px}
+.fphone .lcd{background:#c9d8b6;color:#1d2a12;font:13px/1.45 "Courier New",monospace;border-radius:6px;padding:10px;min-height:150px}
+.fphone .keys{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:12px}
+.fphone .keys span{background:#444;color:#eee;border-radius:8px;text-align:center;padding:5px 0;font-size:13px}
+.pimg{width:100%;height:120px;object-fit:cover;border-radius:12px;display:block;margin-bottom:8px}
+.privacy{font-size:11px;color:#1f5e3f;background:#e3f3ea;border-radius:10px;padding:7px 10px;margin-top:10px;line-height:1.4}
+.btn.tri{background:#00267f;display:flex;align-items:center;justify-content:center;gap:10px}
+.btn.tri svg{width:20px;height:24px}
+.or{display:flex;align-items:center;gap:8px;color:#6a7682;font-size:12px;margin:12px 0 2px}.or:before,.or:after{content:"";flex:1;height:1px;background:#d9dee5}
+.simple-btn{display:flex;align-items:center;gap:14px;width:100%;border:0;border-radius:18px;padding:18px;font:inherit;font-size:19px;font-weight:800;margin-bottom:12px;cursor:pointer;text-align:left;color:#fff}
+.simple-btn .si{font-size:28px;width:44px;text-align:center}
+.simple-btn small{display:block;font-size:13px;font-weight:600;opacity:.9}
+.screen.big .body{zoom:var(--zz,1.16)}
+.screen.hc{--appbg:#ffffff}.screen.hc .m,.screen.hc .note,.screen.hc .req{color:#1b2530!important}.screen.hc .acard{border-color:#5b6875}.screen.hc .chip{background:#dfe6ee}
+.sizes{display:flex;gap:8px}.sizes button{flex:1;border:1px solid #cfd6de;background:#fff;border-radius:10px;padding:8px;cursor:pointer;font-weight:800;color:#16202b}.sizes button.on{background:#0d2a46;color:#fff}
+.tapcard{border:2px dashed #0b4fb3;border-radius:16px;padding:18px;text-align:center;background:#eef4ff;margin-bottom:12px}
+.tapcard .tcard{width:150px;height:94px;margin:0 auto 8px;border-radius:10px;background:linear-gradient(135deg,#00267f,#0b4fb3);position:relative;box-shadow:0 6px 14px rgba(0,38,127,.3)}
+.tapcard .tcard:after{content:"";position:absolute;left:16px;top:30px;width:26px;height:20px;border-radius:4px;background:#e6d3a3}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:12px;margin:14px 0}
+.strip .card{border-left:4px solid var(--ultra)}
+.strip .card b{display:block;margin-bottom:3px}.strip .card span{color:var(--muted);font-size:13px}
 .arch svg{width:100%;height:auto}
 .gantt td{padding:6px 8px}
 .gcell{height:16px;border-radius:4px}
@@ -145,6 +177,8 @@ footer.foot{max-width:1240px;margin:0 auto;padding:20px 16px 40px;color:var(--mu
 <nav class="tabs" aria-label="Sections"><div class="wrap" role="tablist">
   <button role="tab" data-sec="home" aria-selected="true">Overview</button>
   <button role="tab" data-sec="app" aria-selected="false">Mobile app</button>
+  <button role="tab" data-sec="everyone" aria-selected="false">For everyone</button>
+  <button role="tab" data-sec="trident" aria-selected="false">Trident ID and privacy</button>
   <button role="tab" data-sec="abroad" aria-selected="false">Caribbean and diaspora</button>
   <button role="tab" data-sec="int" aria-selected="false">Integrations</button>
   <button role="tab" data-sec="admin" aria-selected="false">Admin and CMS</button>
@@ -181,7 +215,18 @@ footer.foot{max-width:1240px;margin:0 auto;padding:20px 16px 40px;color:var(--mu
   <div class="card"><div class="ic">✈</div><h4>Barbadians abroad</h4><p>Pay in USD, CAD or GBP, use an overseas phone for sign-in codes, send life certificates and view CARICOM service.</p></div>
   <div class="card"><div class="ic">🛡</div><h4>Safe on any network</h4><p>The app checks the network, pins NISSS certificates and suggests a trusted VPN on public Wi-Fi. Staff reach the admin console only through zero-trust access.</p></div>
   <div class="card"><div class="ic">▣</div><h4>Digital NIS card</h4><p>A digital membership card with a verifiable QR code, plus clearance certificates requested and delivered in the app.</p></div>
+  <div class="card"><div class="ic">♿</div><h4>Simple for everyone</h4><p>Simple mode, large text, read-aloud, trusted helpers, a no-smartphone option and assisted service. Nobody is left out by age, ability, income or digital skill. <a href="#" data-goto="everyone">See how</a></p></div>
+  <div class="card"><div class="ic">▲</div><h4>Ready for Trident ID</h4><p>Sign in by tapping your Trident ID card or with the Trident eID app. Tiered, consent-based access to identity, social security, financial and health data. <a href="#" data-goto="trident">See how</a></p></div>
   <div class="card"><div class="ic">⚙</div><h4>Run by NISSS</h4><p>Staff publish news, FAQs, videos and tips with approval and audit, and watch performance and adoption in real time.</p></div>
+ </div>
+ <h3>Aligned with Barbados's national priorities</h3>
+ <div class="strip">
+  <div class="card"><b>Trident ID and digital identity</b><span>Sign-in, registration and e-signatures through the national ID and Trident eID</span></div>
+  <div class="card"><b>GovTech and public-sector modernisation</b><span>Open APIs, cloud and cybersecurity, in line with the 2026 digitisation programme</span></div>
+  <div class="card"><b>National Portable Benefits Framework</b><span>Ready to count short and multi-employer work towards benefits</span></div>
+  <div class="card"><b>NISSS Self-Employed Unit</b><span>Free registration and the Flexible Arrangement: pay any amount, any time, by EZpay+ or SurePay</span></div>
+  <div class="card"><b>National Policy on Ageing</b><span>Simple mode, trusted helpers and digital life certificates for seniors and centenarians</span></div>
+  <div class="card"><b>National Digital Skills Empowerment Campaign</b><span>Assisted digital help and short training with community partners</span></div>
  </div>
  <div class="kpis">
   <div class="card kpi"><div class="l">Business functions working</div><div class="v">11 of 11</div><div class="req">Phase 1 and Phase 2, RFB §1.2</div></div>
@@ -212,7 +257,7 @@ footer.foot{max-width:1240px;margin:0 auto;padding:20px 16px 40px;color:var(--mu
    <div class="phone" aria-label="Phone prototype">
     <div class="screen" id="screen">
       <div class="status"><span id="clock">9:41</span><span>5G ▮▮▮ 92%</span></div>
-      <div class="appbar"><button class="back" id="back" aria-label="Back" hidden>‹</button><div class="t" id="title">NIS Mobile</div><button class="bell" id="bell" hidden>🔔 <span id="ncount">3</span></button></div>
+      <div class="appbar"><button class="back" id="back" aria-label="Back" hidden>‹</button><div class="t" id="title">NIS Mobile</div><button class="bell" id="speak" aria-label="Read this screen aloud" title="Read aloud">🔊</button><button class="bell" id="aa" aria-label="Accessibility settings" title="Accessibility" style="margin-left:6px">Aa</button><button class="bell" id="bell" hidden style="margin-left:6px">🔔 <span id="ncount">3</span></button></div>
       <div class="body" id="view"></div>
       <div class="tabbar" id="tabbar" hidden>
         <button data-go="home"><span class="ic">⌂</span>Home</button>
@@ -228,10 +273,88 @@ footer.foot{max-width:1240px;margin:0 auto;padding:20px 16px 40px;color:var(--mu
  </div>
 </section>
 
+<!-- ================= EVERYONE ================= -->
+<section id="sec-everyone" data-section hidden>
+ <div class="req">Inclusive design · WCAG 2.2 AA · usability testing with members (RFB §4.2) · Data Protection Act, 2019</div>
+ <h2>One simple app for every Barbadian</h2>
+ <p class="lead">Nobody should be shut out of their social security because of age, disability, income, where they live, the phone they own or how confident they are with technology. Every feature below is built in from day one, and each has a non-digital route as well.</p>
+ <div class="gallery">
+  <figure><img src="img/centenarians.jpg" alt="Barbados Postal Service stamps honouring Barbadian centenarians" loading="lazy"><figcaption><b>Seniors and pensioners</b>Barbados has one of the highest numbers of centenarians per head in the world. Simple mode, large text, read-aloud, a trusted helper and digital life certificates make the app easy at any age.</figcaption></figure>
+  <figure><img src="img/youth.jpg" alt="Young Barbadian athletes celebrating with the national flag" loading="lazy"><figcaption><b>Young people starting work</b>School leavers get their NIS number, see their first contributions and learn how social security protects them, in plain language and on any phone.</figcaption></figure>
+  <figure><img src="img/chattel.jpg" alt="Colourful chattel house display with a QR code for Crop Over" loading="lazy"><figcaption><b>Self-employed, vendors and gig workers</b>Register free, pay any amount at any time under the Flexible Arrangement, and pay with cash at SurePay agents using a QR or payment code. Short and multi-employer work is ready to count under the Portable Benefits Framework.</figcaption></figure>
+ </div>
+ <h3>Built-in inclusion toolkit</h3>
+ <div class="feat">
+  <div class="card"><div class="ic">◉</div><h4>Simple mode</h4><p>Three big buttons: pay what I owe, check my pension, get help. Plain language, no jargon. <a href="#" data-try="simple">Try it</a></p></div>
+  <div class="card"><div class="ic">Aa</div><h4>Text size, contrast and read-aloud</h4><p>Three text sizes, high contrast, screen-reader labels and a read-aloud button on every screen. <a href="#" data-try="access">Try it</a></p></div>
+  <div class="card"><div class="ic">♥</div><h4>Trusted helper</h4><p>A family member or carer can help with limited, time-bound permission the member grants and can withdraw. Every action is logged. <a href="#" data-try="helper">Try it</a></p></div>
+  <div class="card"><div class="ic">☎</div><h4>No smartphone needed</h4><p>Check what you owe, your pension date and request a call-back by SMS or a short code on any basic phone.</p></div>
+  <div class="card"><div class="ic">⌂</div><h4>Assisted service</h4><p>Staff at NISSS offices, and proposed community partners, can complete any task with the member, using the same secure app.</p></div>
+  <div class="card"><div class="ic">$</div><h4>No bank account needed</h4><p>Pay by card or bank through EZpay+, or with cash at SurePay agents using a payment code from the app.</p></div>
+  <div class="card"><div class="ic">↯</div><h4>Low-data and older phones</h4><p>Small download, works on older Android and iPhone models and on slow mobile data, with a low-data mode.</p></div>
+  <div class="card"><div class="ic">🌐</div><h4>Languages</h4><p>English with plain-language wording, and content in other languages for migrant workers managed by NISSS in the CMS.</p></div>
+ </div>
+ <div class="grid2" style="grid-template-columns:minmax(0,1fr) 260px;margin-top:8px">
+  <div class="card"><h3 style="margin-top:0">Who we design for, and how</h3>
+   <table><thead><tr><th>Member</th><th>Common barrier</th><th>How NIS Mobile removes it</th></tr></thead><tbody>
+   <tr><td>Seniors and pensioners</td><td>Small text, complex menus, travel to an office</td><td>Simple mode, large text, read-aloud, trusted helper, digital life certificate</td></tr>
+   <tr><td>Persons with disabilities</td><td>Screens that do not work with assistive technology</td><td>WCAG 2.2 AA, screen-reader labels, voice input, high contrast, no time limits on forms</td></tr>
+   <tr><td>Low income or unbanked</td><td>No card, no bank account, limited data</td><td>Cash at SurePay agents, low-data mode, SMS and short code, works on older phones</td></tr>
+   <tr><td>Self-employed and gig workers</td><td>Irregular income and many employers</td><td>Pay any amount any time, all work in one record, Portable Benefits-ready</td></tr>
+   <tr><td>Rural and island-wide</td><td>Distance from Bridgetown</td><td>Everything in the app, plus assisted service and call-back</td></tr>
+   <tr><td>Barbadians abroad</td><td>Time zones, foreign cards, posted forms</td><td>Pay in USD, CAD or GBP, overseas codes, digital life certificate</td></tr>
+   <tr><td>Less confident with technology</td><td>Fear of making mistakes or being scammed</td><td>Plain language, confirmation before every payment, guided help, digital skills sessions</td></tr>
+   </tbody></table></div>
+  <div><div class="fphone" aria-label="Basic phone example"><div class="lcd">NIS (short code)<br>1 What I owe<br>2 Last payment<br>3 Pension date<br>4 Get a payment code<br>5 Call me back<br>&gt; 1<br>Due: BBD 972.40<br>Sep, Oct 2026</div><div class="keys"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>*</span><span>0</span><span>#</span></div></div><div class="req" style="text-align:center;margin-top:8px">Basic-phone service (illustrative). The short code is agreed with NISSS and the telecoms providers.</div></div>
+ </div>
+</section>
+
+<!-- ================= TRIDENT ================= -->
+<section id="sec-trident" data-section hidden>
+ <div class="banner-img" style="background-image:url(img/parliament.jpg)"><div class="cap"><div class="req" style="color:#ffc726">Barbados Identity Management Act · Data Protection Act, 2019 · RFB §1.4.3</div><h2>Trident ID, tiered data and privacy by design</h2><p>Built on Barbados law: the member's national ID is the key, and the member decides what is shared, every time.</p></div></div>
+ <div class="grid2" style="grid-template-columns:1fr 1fr">
+  <div class="card"><h3 style="margin-top:0">What Trident ID provides</h3>
+   <ul style="margin:0;padding-left:18px">
+    <li>A durable, tamper-resistant smart card with a chip, a PIN for extra information, a machine-readable zone and a QR code.</li>
+    <li>An optional Trident eID on the phone for remote sign-in, doing business remotely and legally binding electronic signatures.</li>
+    <li>Sharing only when the holder acts (shows, taps, scans or enters a PIN), with advance notice of what is requested.</li>
+    <li>An embossed trident to help visually impaired holders, and optional, verified disability status.</li>
+   </ul><div class="req" style="margin-top:8px">Source: trident.gov.bb and the Government Information Service. Integration uses the interfaces the Government makes available.</div></div>
+  <div class="card"><h3 style="margin-top:0">How NIS Mobile uses it</h3>
+   <ul style="margin:0;padding-left:18px">
+    <li><b>Sign in</b> by tapping the Trident ID card (NFC and PIN) or approving in the Trident eID app. <a href="#" data-try="trident">Try it</a></li>
+    <li><b>Register</b> without paperwork: identity is verified once, not re-keyed.</li>
+    <li><b>Sign</b> claims, declarations and life certificates electronically.</li>
+    <li><b>Share less:</b> the app asks only for the data a task needs, and shows it first.</li>
+    <li><b>Stay in control:</b> a consent dashboard lists every access and lets the member withdraw it. <a href="#" data-try="consent">Try it</a></li>
+   </ul></div>
+ </div>
+ <h3>Tiered access: the card is the key, not the vault</h3>
+ <p class="lead">Records stay in the systems that own them. Each tier needs a stronger proof of identity and its own consent, and every access is logged.</p>
+ <div class="card"><table class="tier"><thead><tr><th>Tier</th><th>Examples</th><th>Proof of identity</th><th>Consent</th><th>Where the data stays</th></tr></thead><tbody>
+  <tr><td><span class="tchip" style="background:#5d6b78">0 Public</span></td><td>News, FAQs, office hours, benefit guides</td><td>None</td><td>Not needed</td><td>NISSS CMS</td></tr>
+  <tr><td><span class="tchip" style="background:#0b4fb3">1 Identity</span></td><td>Name, date of birth, Trident ID and NIS numbers</td><td>Trident eID or card and PIN, or password and one-time code</td><td>Shown at sign-in</td><td>Trident ID service and NISSS</td></tr>
+  <tr><td><span class="tchip" style="background:#00267f">2 Social security</span></td><td>Contributions, credited weeks, pension estimate, claims</td><td>Signed-in session on a trusted device</td><td>Covered by membership; access logged</td><td>NISSS systems of record</td></tr>
+  <tr><td><span class="tchip" style="background:#b46b00">3 Financial</span></td><td>Bank account for benefits, payment records</td><td>Step-up check (biometric or card PIN)</td><td>Asked each time a detail changes</td><td>Banks and the payment provider; card numbers never stored by NISSS</td></tr>
+  <tr><td><span class="tchip" style="background:#b3261e">4 Health and disability</span></td><td>Medical certificates for sickness or injury claims; optional disability status</td><td>Step-up check plus explicit consent</td><td>Per claim, time-limited, can be withdrawn</td><td>Issuing clinician and NISSS document system; encrypted, restricted to assessors</td></tr>
+ </tbody></table></div>
+ <h3>Security and privacy in every module</h3>
+ <div class="card"><table><thead><tr><th>Module</th><th>Highest tier</th><th>Key controls</th></tr></thead><tbody>
+  <tr><td>Sign-in and account</td><td>1</td><td>Trident eID or MFA, device binding, biometric unlock, lockout and alerts on new devices</td></tr>
+  <tr><td>Dashboard and contributions</td><td>2</td><td>Short-lived tokens, read-only API scopes, no records cached unencrypted on the phone</td></tr>
+  <tr><td>Payments and receipts</td><td>3</td><td>Hosted payment page, PCI DSS scope reduction, idempotent payments, step-up for new payees</td></tr>
+  <tr><td>Pension estimator</td><td>2</td><td>Rules signed off by NISSS, inputs not stored unless the member saves them</td></tr>
+  <tr><td>Notifications</td><td>1</td><td>No sensitive figures in SMS or lock-screen previews; member chooses channels</td></tr>
+  <tr><td>Support and chat</td><td>2</td><td>Agent sees only what the case needs, conversations logged with consent, masked data</td></tr>
+  <tr><td>Claims and documents</td><td>4</td><td>Explicit consent, encrypted signed uploads, malware scanning, assessor-only access, retention limits</td></tr>
+  <tr><td>Trusted helper</td><td>2 to 3</td><td>Member-granted, scoped and time-limited, every action logged and shown to the member</td></tr>
+  <tr><td>Admin and CMS</td><td>Staff</td><td>Zero-trust access, role-based permissions, approval workflow, tamper-evident audit trail</td></tr>
+ </tbody></table></div>
+</section>
+
 <!-- ================= ABROAD ================= -->
 <section id="sec-abroad" data-section hidden>
- <div class="req">Optional enhancements proposed under the RFB "Purchaser's Requirements" (features not specifically requested)</div>
- <h2>For Barbadians across the Caribbean and in the diaspora</h2>
+ <div class="banner-img" style="background-image:url(img/careenage.jpg)"><div class="cap"><div class="req" style="color:#ffc726">Optional enhancements proposed under the RFB "Purchaser's Requirements"</div><h2>For Barbadians across the Caribbean and in the diaspora</h2><p>Home is always one tap away, wherever members live and work.</p></div></div>
  <p class="lead">Many contributors and pensioners live in other CARICOM states, North America or the UK. The app lets them deal with NISSS without travelling home or posting forms. Try each one in the phone on the Mobile app tab.</p>
  <div class="feat">
   <div class="card"><div class="ic">$</div><h4>Pay from abroad</h4><p>Pay in USD, CAD or GBP by international card. The app shows the BBD amount credited before you confirm. <a href="#" data-try="abroad">Try it</a></p></div>
@@ -390,7 +513,7 @@ footer.foot{max-width:1240px;margin:0 auto;padding:20px 16px 40px;color:var(--mu
  <div class="card"><table><thead><tr><th>RFB ref.</th><th>Requirement</th><th>Where to see it</th><th>Test type</th><th>Prototype</th></tr></thead><tbody id="trace"></tbody></table></div>
 </section>
 </main>
-<footer class="foot">Agentic Rx Inc. · 41B Blue Waters, Rockley, Christ Church, Barbados · info@agentic-rx.com · Bid prototype for RFP No. NISSS13/15_2026_02. All names, numbers and amounts are invented sample data. The delivered application will use NISSS's live APIs, approved benefit rules and branding.</footer>
+<footer class="foot">Agentic Rx Inc. · 41B Blue Waters, Rockley, Christ Church, Barbados · info@agentic-rx.com · Bid prototype for RFP No. NISSS13/15_2026_02. All names, numbers and amounts are invented sample data. The delivered application will use NISSS's live APIs, approved benefit rules and branding. Trident ID integration uses the interfaces made available by the Government of Barbados. Photographs are used for illustration.</footer>
 
 <script>
 (function(){
@@ -399,8 +522,8 @@ const money=v=>'BBD '+v.toLocaleString('en-GB',{minimumFractionDigits:2,maximumF
 /* ---------- top tabs ---------- */
 function showSec(id){$$('[data-section]').forEach(s=>s.hidden=s.id!=='sec-'+id);$$('nav.tabs button').forEach(b=>b.setAttribute('aria-selected',b.dataset.sec===id));if(id==='ops')drawOps();if(id==='plan')drawGantt();if(id==='abroad')drawMap();if(id==='int')drawInts();window.scrollTo(0,0);}
 $$('nav.tabs button').forEach(b=>b.onclick=()=>{showSec(b.dataset.sec);history.replaceState(null,'','#'+b.dataset.sec)});
-$$('[data-goto]').forEach(b=>b.onclick=()=>{showSec(b.dataset.goto);history.replaceState(null,'','#'+b.dataset.goto)});
-$$('[data-try]').forEach(a=>a.onclick=e=>{e.preventDefault();showSec('app');authed=true;stack=['home'];go(a.dataset.try,false);});
+$$('[data-goto]').forEach(b=>b.onclick=e=>{e.preventDefault();showSec(b.dataset.goto);history.replaceState(null,'','#'+b.dataset.goto)});
+$$('[data-try]').forEach(a=>a.onclick=e=>{e.preventDefault();showSec('app');const t=a.dataset.try;if(t==='simple'){simple=true;authed=true;stack=[];go('home',false);return;}if(t==='trident'){authed=false;stack=['login'];go('trident',false);return;}authed=true;stack=['home'];go(t,false);});
 /* ---------- sample data ---------- */
 const member={name:'Jordan Alleyne',nis:'NIS 000-000-000 (sample)',type:'Self-employed',weeks:612,since:2009,dob:1971};
 const months=['Oct 2026','Sep 2026','Aug 2026','Jul 2026','Jun 2026','May 2026','Apr 2026','Mar 2026','Feb 2026','Jan 2026','Dec 2025','Nov 2025'];
@@ -413,11 +536,14 @@ let notes=[
 let claims=[{id:'CLM-10422',type:'Sickness benefit',date:'12 Aug 2026',status:3}];
 const claimSteps=['Submitted','Documents checked','Under assessment','Approved','Paid'];
 /* ---------- phone router ---------- */
-let route='login', stack=[], authed=false, netSafe=false;
+let route='login', stack=[], authed=false, netSafe=false, simple=false, tsize=0, hc=false, lowdata=false, helperOn=false;
+const consents={1:true,2:true,3:true,4:false};
+const accessLog=[['Today 09:41','NIS Mobile','Read contributions','2'],['Today 09:40','Trident ID','Confirmed identity for sign-in','1'],['3 Oct','Payment provider','Card payment for Aug 2026','3']];
+const TRI='<svg viewBox="0 0 120 160" aria-hidden="true"><g fill="#ffc726"><path d="M57 6 L63 6 L66 30 L62 30 L62 112 L58 112 L58 30 L54 30 Z"/><path d="M60 0 L68 18 L52 18 Z"/><path d="M58 58 C38 58 26 46 22 20 L14 22 L24 4 L34 20 L28 19 C32 38 42 48 58 48 Z"/><path d="M62 58 C82 58 94 46 98 20 L106 22 L96 4 L86 20 L92 19 C88 38 78 48 62 48 Z"/></g></svg>';
 function qr(){let seed=7,o='';const r=()=>{seed=(seed*9301+49297)%233280;return seed/233280};const fin=(x,y)=>`<rect x="${x}" y="${y}" width="7" height="7" fill="#00267f"/><rect x="${x+1}" y="${y+1}" width="5" height="5" fill="#fff"/><rect x="${x+2}" y="${y+2}" width="3" height="3" fill="#00267f"/>`;
  for(let y=0;y<21;y++)for(let x=0;x<21;x++){if((x<8&&y<8)||(x>12&&y<8)||(x<8&&y>12))continue;if(r()>.52)o+=`<rect x="${x}" y="${y}" width="1" height="1" fill="#0d2a46"/>`;}
  return o+fin(0,0)+fin(14,0)+fin(0,14);}
-const titles={login:'NIS Mobile',otp:'Verify it\'s you',home:'Home',contrib:'Contributions',pay:'Make a payment',receipt:'Receipt',estimate:'Pension estimator',claims:'Claims',newclaim:'New claim',claim:'Claim status',more:'More',notes:'Notifications',support:'Customer support',chat:'Chat with us',info:'Information',profile:'My account',security:'Security and devices',card:'Digital NIS card',abroad:'Pay from abroad',caricom:'CARICOM service',life:'Life certificate',network:'Secure connection',clearance:'Clearance certificate'};
+const titles={login:'NIS Mobile',otp:'Verify it\'s you',home:'Home',contrib:'Contributions',pay:'Make a payment',receipt:'Receipt',estimate:'Pension estimator',claims:'Claims',newclaim:'New claim',claim:'Claim status',more:'More',notes:'Notifications',support:'Customer support',chat:'Chat with us',info:'Information',profile:'My account',security:'Security and devices',card:'Digital NIS card',abroad:'Pay from abroad',caricom:'CARICOM service',life:'Life certificate',network:'Secure connection',clearance:'Clearance certificate',trident:'Trident ID sign-in',consent:'My data and consent',access:'Accessibility and language',helper:'Trusted helper'};
 const explain={
  login:['Secure sign-in','§1.2.1.1 User account management · §3.1.4.2 OAuth2/OpenID Connect','Sign-in is handled by NISSS\'s cloud IAM. The demo account is pre-filled so no details are typed.'],
  otp:['Multi-factor authentication','§1.4.3 Security management','A one-time code is required on new devices; biometric unlock is offered afterwards.'],
@@ -441,10 +567,18 @@ const explain={
  caricom:['CARICOM service record','Optional add-on · CARICOM Agreement on Social Security','Shows periods insured in other CARICOM states that may count towards benefits. Illustrative; data exchange subject to NISSS agreements.'],
  life:['Digital life certificate','Optional add-on · §1.2.2.3 claims and benefits','Pensioners abroad confirm proof of life with a selfie and ID check, replacing a posted, witnessed form.'],
  network:['Secure connection check','§1.4.3 · OWASP MASVS-NETWORK','The app checks the network, always uses TLS with certificate pinning, and recommends a trusted VPN on public Wi-Fi.'],
- clearance:['Clearance certificate','§0.4.2 digitisation of clearance certification','Request an NIS clearance certificate and receive it in the app, ready to share with a verification link.']};
+ clearance:['Clearance certificate','§0.4.2 digitisation of clearance certification','Request an NIS clearance certificate and receive it in the app, ready to share with a verification link.'],
+ trident:['Sign in with Trident ID','§1.2.1.1 · §1.4.3 · Barbados Identity Management Act','Tap the Trident ID card and enter its PIN, or approve in the Trident eID app. The member sees exactly what is shared before agreeing.'],
+ consent:['My data and consent','Data Protection Act, 2019 · §1.4.3','Tiered consent with an access log: members see who used which data, and can withdraw optional consents.'],
+ access:['Accessibility and language','WCAG 2.2 AA · inclusive design','Simple mode, three text sizes, high contrast, read-aloud, low-data mode and language choice, saved to the member\'s profile.'],
+ helper:['Trusted helper','Inclusive design · Data Protection Act, 2019','A family member or carer can help with limited, time-bound permission that the member grants and can withdraw. Every action is logged.'],
+ simple:['Simple mode','Inclusive design','Three big actions in plain language for members who want the simplest possible app.']};
+const privacy={login:'Tier 1 identity. Strong sign-in; nothing typed in the demo is sent anywhere.',otp:'Tier 1. One-time code binds this device; codes expire in 5 minutes.',trident:'Tier 1. Only name, date of birth and ID numbers are shared, with the holder\'s action and PIN.',home:'Tier 2. Read-only access over TLS with certificate pinning; nothing cached unencrypted.',contrib:'Tier 2. Read-only API scope; each access written to the member\'s access log.',pay:'Tier 3. Card details stay on the payment provider\'s page; step-up check for new payment methods.',receipt:'Tier 3. Receipt shows masked card details only.',estimate:'Tier 2. Inputs are not stored unless the member saves an estimate.',claims:'Tier 2 to 4. Claim records restricted to assessors.',newclaim:'Tier 4 health data. Medical certificate shared only with explicit consent, encrypted and seen only by assessors.',claim:'Tier 2. Status only; no medical details on this screen.',notes:'Tier 1. Alerts never show amounts or health details on the lock screen.',support:'Tier 2. Agents see only what the case needs.',chat:'Tier 2. Conversation logged with consent; personal data masked.',profile:'Tier 1 to 3. Changes to contact or bank details need a step-up check.',security:'Tier 1. Manage devices and sign out everywhere.',card:'Tier 1. Rotating QR proves membership without revealing records.',clearance:'Tier 2. Certificate shows status only, with a verification link.',abroad:'Tier 3. International card payments through the hosted payment page.',caricom:'Tier 2. Shown only where a data-sharing agreement exists.',life:'Tier 1 and 4. Liveness check images are deleted after verification.',network:'Network security: TLS 1.3, certificate pinning, VPN advice on public Wi-Fi.',consent:'The member controls Tiers 3 and 4; Tier 2 access is logged.',access:'Settings are stored on the device only.',helper:'Helper access is scoped, time-limited and logged.',more:'',info:'Tier 0 public content.',simple:'Same security as the full app, with fewer choices.'};
 function go(r,push=true){if(push&&route!==r)stack.push(route);route=r;render();}
 function back(){route=stack.pop()||'home';render();}
 $('#back').onclick=back;$('#bell').onclick=()=>go('notes');
+function speak(){try{const t=$('#view').innerText.replace(/\s+/g,' ').slice(0,700);speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='en-GB';u.rate=.95;speechSynthesis.speak(u);toast('Reading this screen aloud');}catch(e){toast('Read-aloud is not available on this browser');}}
+$('#speak').onclick=speak;$('#aa').onclick=()=>{if(!authed){authed=true;stack=['home'];}go('access');};
 $$('#tabbar button').forEach(b=>b.onclick=()=>{stack=[];go(b.dataset.go,false)});
 function toast(t){const e=$('#toast');e.textContent=t;e.classList.add('show');setTimeout(()=>e.classList.remove('show'),2200);}
 function render(){
@@ -452,18 +586,22 @@ function render(){
  $('#tabbar').hidden=!authed;$('#bell').hidden=!authed;$('#back').hidden=!authed||!stack.length||['home','contrib','estimate','claims','more'].includes(route)&&!stack.length;
  $$('#tabbar button').forEach(b=>b.classList.toggle('on',b.dataset.go===route));
  $('#ncount').textContent=notes.filter(n=>n.u).length;
- v.innerHTML=(views[route]||views.home)();v.scrollTop=0;
- (binds[route]||(()=>{}))();
- const ex=explain[route];if(ex)$('#explain').innerHTML=`<div class="req">${ex[1]}</div><h3 style="margin:4px 0">${ex[0]}</h3><div>${ex[2]}</div>`;
- $$('#jump button').forEach(b=>b.classList.toggle('on',b.dataset.r===route));
+ const vk=(route==='home'&&simple)?'simplehome':route;v.innerHTML=(views[vk]||views.home)();v.scrollTop=0;
+ (binds[vk]||(()=>{}))();
+ const key=(route==='home'&&simple)?'simple':route;const ex=explain[key];if(ex)$('#explain').innerHTML=`<div class="req">${ex[1]}</div><h3 style="margin:4px 0">${ex[0]}</h3><div>${ex[2]}</div>${privacy[key]?`<div class="privacy" style="font-size:12.5px">🔒 Security and privacy: ${privacy[key]}</div>`:''}`;
+ $('#screen').classList.toggle('big',simple||tsize>0);$('#screen').style.setProperty('--zz',[1.16,1.16,1.3][tsize]||1.16);$('#screen').classList.toggle('hc',hc);
+ $$('#jump button').forEach(b=>b.classList.toggle('on',b.dataset.r===(route==='home'&&simple?'simple':route)));
 }
 const due=()=>contribs.filter(c=>c.status==='Due');
 const views={
- login:()=>`<div style="text-align:center;margin:26px 0 18px"><div style="width:76px;height:76px;margin:0 auto;border-radius:22px;background:#0d2a46;display:grid;place-items:center;color:#e6d3a3;font:700 26px Georgia">NIS</div><h3 style="margin:14px 0 2px">Welcome back</h3><div class="note">Prototype sign-in · demo account</div></div>
+ login:()=>`<div style="text-align:center;margin:18px 0 14px"><div style="width:70px;height:70px;margin:0 auto;border-radius:20px;background:#0d2a46;display:grid;place-items:center;color:#e6d3a3;font:700 24px Georgia">NIS</div><h3 style="margin:12px 0 2px">Welcome</h3><div class="note">Prototype sign-in · demo account</div></div>
+  <button class="btn tri" id="tri">${TRI}Sign in with Trident ID</button><div class="note" style="text-align:center">Tap your Trident ID card or use the Trident eID app</div>
+  <div class="or">or use your NIS number</div>
   <label class="f">NIS number or email</label><input class="in" value="demo.member@example.com" readonly>
   <label class="f">Password</label><input class="in" value="••••••••••" readonly>
   <button class="btn" id="signin">Continue with demo account</button>
   <button class="btn ghost" id="reg">Register for NIS Mobile</button>
+  <button class="chip" id="simpleOn" style="margin-top:12px;width:100%;padding:10px;font-weight:700">◉ Prefer bigger buttons? Use Simple mode</button>
   <div class="note">Fields are fixed for the demo: nothing you type is sent anywhere. The live app uses NISSS's identity service.</div>`,
  otp:()=>`<p style="font-size:14px">We sent a 6-digit code to the phone ending ••42. For the demo, the code is filled in for you.</p>
   <div style="display:flex;gap:8px;justify-content:center;margin:18px 0">${'482913'.split('').map(d=>`<div style="width:42px;height:52px;border:1px solid #cfd6de;border-radius:10px;display:grid;place-items:center;font:700 22px Georgia;background:#fff">${d}</div>`).join('')}</div>
@@ -480,6 +618,30 @@ const views={
   <div class="acard" style="display:flex;gap:14px;align-items:center"><svg class="ring" viewBox="0 0 84 84"><circle cx="42" cy="42" r="34" fill="none" stroke="#e6eaef" stroke-width="9"/><circle cx="42" cy="42" r="34" fill="none" stroke="#ffc726" stroke-width="9" stroke-linecap="round" stroke-dasharray="${C*pct} ${C}" transform="rotate(-90 42 42)"/><text x="42" y="47" text-anchor="middle" font-size="15" font-weight="800" fill="#00267f">${Math.round(pct*100)}%</text></svg>
    <div><h4 style="margin:0 0 4px">Pension progress</h4><div style="font-size:12.5px">${member.weeks} credited weeks. Qualified at 500 ✓. Maximum rate at 1,300 weeks.</div><button class="chip" data-q="estimate" style="margin-top:6px">Estimate my pension ›</button></div></div>
   <div class="acard"><h4>Latest from NISSS</h4><div class="row"><span>${notes[2].b}</span><span class="m">${notes[2].d}</span></div><button class="btn ghost" data-q="info">See all news and tips</button></div>`},
+ simplehome:()=>{const d=due(),amt=d.reduce((a,c)=>a+c.due,0);return `<div style="font-size:16px;margin-bottom:12px">Hello, <b>${member.name.split(' ')[0]}</b>. What would you like to do?</div>
+  <button class="simple-btn" style="background:#00267f" id="s-pay"><span class="si">$</span><span>${d.length?'Pay what I owe':'Nothing to pay'}<small>${d.length?money(amt)+' for '+d.map(x=>x.m).join(' and '):'All contributions are paid'}</small></span></button>
+  <button class="simple-btn" style="background:#0b6d7a" data-q="estimate"><span class="si">%</span><span>Check my pension<small>${member.weeks} weeks paid · see what you may get</small></span></button>
+  <button class="simple-btn" style="background:#8a5a00" id="s-help"><span class="si">✆</span><span>Get help<small>We will call you back</small></span></button>
+  <button class="btn ghost" id="s-read">🔊 Read this screen to me</button>
+  <button class="btn ghost" id="s-full">Show the full app</button>
+  <div class="privacy">🔒 Same security as the full app. Your helper can assist only if you have allowed it.</div>`},
+ trident:()=>`<div class="steps3"><span class="on"></span><span id="t2"></span><span id="t3"></span></div>
+  <div class="tapcard" id="tap" style="cursor:pointer"><div class="tcard"></div><b>Hold your Trident ID card to the back of your phone</b><div class="note">or approve the request in your Trident eID app</div></div>
+  <div class="acard"><h4>NIS Mobile is asking to see</h4><div class="row"><span>Name</span><b>✓</b></div><div class="row"><span>Date of birth</span><b>✓</b></div><div class="row"><span>Trident ID number</span><b>✓</b></div><div class="row"><span class="m">Not requested: address, licence details, disability status</span><span></span></div></div>
+  <label class="f">Card PIN</label><input class="in" value="••••" readonly>
+  <button class="btn" id="trishare">Share and sign in</button><div class="privacy">🔒 Shared only because you tapped and entered your PIN, as the Barbados Identity Management Act and Data Protection Act require. Demo only: no card is read.</div>`,
+ consent:()=>`<div class="acard"><h4>What NIS Mobile may use</h4>${[[1,'Identity','Name, date of birth, ID numbers','#0b4fb3',1],[2,'Social security','Contributions, pension, claims','#00267f',1],[3,'Financial','Bank account for benefits, payments','#b46b00',0],[4,'Health and disability','Medical certificates for claims; disability status','#b3261e',0]].map(t=>`<label class="row"><span><span class="tchip" style="background:${t[3]}">Tier ${t[0]}</span> <b>${t[1]}</b><br><span class="m">${t[2]}</span></span>${t[4]?'<span class="m">Required</span>':`<input type="checkbox" data-tier="${t[0]}" ${consents[t[0]]?'checked':''}>`}</label>`).join('')}</div>
+  <div class="acard"><h4>Access log</h4>${accessLog.map(a=>`<div class="row"><span>${a[2]}<br><span class="m">${a[0]} · ${a[1]}</span></span><span class="m">Tier ${a[3]}</span></div>`).join('')}</div>
+  <button class="btn ghost" id="dl">Download a copy of my data</button>`,
+ access:()=>`<div class="acard"><label class="row"><span><b>Simple mode</b><br><span class="m">Three big buttons, plain language</span></span><input type="checkbox" id="a-simple" ${simple?'checked':''}></label>
+  <div style="padding:9px 0"><b>Text size</b><div class="sizes" style="margin-top:6px">${['A','A+','A++'].map((x,i)=>`<button data-ts="${i}" class="${tsize===i?'on':''}">${x}</button>`).join('')}</div></div>
+  <label class="row"><span><b>High contrast</b></span><input type="checkbox" id="a-hc" ${hc?'checked':''}></label>
+  <label class="row"><span><b>Low-data mode</b><br><span class="m">Fewer images, smaller downloads</span></span><input type="checkbox" id="a-low" ${lowdata?'checked':''}></label></div>
+  <div class="acard"><h4>Language</h4>${['English','Español','Français'].map((l,i)=>`<button class="chip ${i==0?'on':''}" data-lang="${l}">${l}</button>`).join('')}<div class="note">Translations are managed by NISSS in the CMS.</div></div>
+  <button class="btn ghost" id="a-read">🔊 Read this screen aloud</button><button class="btn ghost" data-q="helper">Add a trusted helper</button>`,
+ helper:()=>`<div class="acard"><h4>Your trusted helper</h4>${helperOn?'<div class="row"><span><b>Andrea Alleyne</b> (daughter)<br><span class="m">Can view and pay · until 31 Dec 2026</span></span><button class="chip" id="h-off" style="flex:none;align-self:center">Remove</button></div>':'<div class="m">No helper yet. A helper can sign in with their own Trident ID to help you.</div>'}</div>
+  ${helperOn?'':`<div class="acard"><label class="f">What can they do?</label><label class="row"><span>View my contributions</span><input type="checkbox" checked></label><label class="row"><span>Make payments for me</span><input type="checkbox" checked></label><label class="row"><span>Submit claims for me</span><input type="checkbox"></label><label class="f">For how long?</label><select class="in"><option>Until 31 Dec 2026</option><option>3 months</option><option>Until I remove it</option></select></div><button class="btn" id="h-add">Invite helper (demo)</button>`}
+  <div class="privacy">🔒 Helpers never see your password. They act with their own identity, only within what you allow, and every action appears in your access log.</div>`,
  card:()=>`<div class="nis-card"><div style="display:flex;justify-content:space-between"><b style="letter-spacing:.12em">NIS MEMBER CARD</b><span style="font-size:11px;opacity:.85">PROTOTYPE</span></div><div style="font:600 20px Georgia;margin-top:18px">${member.name}</div><div style="font-size:12.5px;opacity:.9">${member.nis}</div><div style="display:flex;justify-content:space-between;align-items:flex-end;margin-top:14px;margin-bottom:6px"><div style="font-size:12px;opacity:.9">Member since ${member.since}<br>${member.type}</div><svg width="78" height="78" viewBox="0 0 21 21" style="background:#fff;border-radius:8px;padding:4px">${qr()}</svg></div><div class="stripe"></div></div>
   <div class="note">The QR code rotates every 60 seconds and is verified against NISSS records, so a screenshot cannot be reused.</div><button class="btn ghost" id="wallet">Add to Apple Wallet or Google Wallet</button>`,
  clearance:()=>`<div class="acard"><h4>NIS clearance certificate</h4><div class="row"><span>Contribution status</span><b>${due().length?'Outstanding: '+due().length+' month(s)':'Up to date ✓'}</b></div><label class="f">Purpose</label><select class="in"><option>Government contract</option><option>Work permit</option><option>Bank or loan</option><option>Other</option></select></div>
@@ -496,12 +658,14 @@ const views={
   <div class="acard"><div class="row"><span>Encryption (TLS 1.3)</span><b>✓</b></div><div class="row"><span>NISSS certificate pinning</span><b>✓</b></div><div class="row"><span>Trusted VPN</span><b>${netSafe?'On':'Off'}</b></div><div class="row"><span>Device integrity</span><b>✓ Not rooted or jailbroken</b></div></div>
   <button class="btn ${netSafe?'ghost':'gold'}" id="vpn">${netSafe?'Turn off VPN':'Turn on trusted VPN'}</button><div class="note">Data is always encrypted in transit. A VPN adds protection on untrusted networks abroad. NISSS staff reach the admin console only through zero-trust access.</div>`,
  contrib:()=>`<div style="margin-bottom:8px">${['All','Paid','Due'].map((f,i)=>`<button class="chip ${i==0?'on':''}" data-f="${f}">${f}</button>`).join('')}</div>
+  <div class="acard" style="border-left:4px solid #0aa3c2"><h4>Work counted this month</h4><div class="row"><span>Island Catering Ltd</span><b>16 h</b></div><div class="row"><span>Harbour Events</span><b>9 h</b></div><div class="row"><span>Self-employed (vending)</span><b>12 h</b></div><div class="note">Every job counts towards your record. Ready for the National Portable Benefits Framework (illustrative).</div></div>
   <div class="acard" id="clist"></div>${due().length?'<button class="btn gold" id="paydue">Pay outstanding months</button>':''}<div class="note">Source: NISSS contribution API (sample data).</div>`,
  pay:()=>{const d=due();return `<div class="steps3"><span class="on"></span><span class="on"></span><span></span></div>
   <div class="acard"><h4>Months to pay</h4>${d.map(c=>`<label class="row"><span><input type="checkbox" checked data-m="${c.m}"> ${c.m}</span><b>${money(c.due)}</b></label>`).join('')}<div class="row"><span><b>Total</b></span><b id="ptot">${money(d.reduce((a,c)=>a+c.due,0))}</b></div></div>
   <div class="acard"><h4>Payment method</h4><label class="row"><span><input type="radio" name="pm" checked> Debit or credit card</span><span class="m">via payment gateway</span></label><label class="row"><span><input type="radio" name="pm"> Bank account (direct debit)</span><span class="m">Barbados banks</span></label></div>
   <div class="lock">🔒 Card details are entered on the payment provider's secure page, never stored by NIS Mobile.</div>
-  <button class="btn" id="confirm">Confirm payment</button>`},
+  <button class="btn" id="confirm">Confirm payment</button>
+  <div class="acard" style="margin-top:12px;display:flex;gap:12px;align-items:center"><svg width="64" height="64" viewBox="0 0 21 21" style="flex:none;background:#fff;border:1px solid #e1e5ea;border-radius:8px;padding:3px">${qr()}</svg><div><b style="font-size:13.5px">No card or bank account?</b><div class="m">Pay cash at any SurePay agent with this code, or online through EZpay+.</div><button class="chip" id="paycode" style="margin-top:6px">Get payment code</button></div></div>`},
  receipt:()=>{const r=window._rcpt||{};return `<div class="receipt"><div style="text-align:center"><div style="font-size:34px">✓</div><h3 style="margin:4px 0">Payment successful</h3><div class="note">Receipt ${r.no}</div></div>
   <div class="row"><span>Member</span><b>${member.name}</b></div><div class="row"><span>Months</span><b>${(r.months||[]).join(', ')}</b></div><div class="row"><span>Amount</span><b>${money(r.total||0)}</b></div><div class="row"><span>Date</span><b>${new Date().toLocaleDateString('en-GB')}</b></div><div class="row"><span>Method</span><b>Card ••••4242</b></div></div>
   <button class="btn ghost" id="share">Download PDF receipt</button><button class="btn" data-q="home">Back to home</button>`},
@@ -510,7 +674,7 @@ const views={
   <label class="f">Contribution weeks at retirement: <b id="e-weeks-v"></b></label><input type="range" id="e-weeks" min="150" max="2200" step="10" value="1500"></div>
   <div class="hero"><div class="small">Estimated monthly pension</div><div class="big" id="e-out"></div><div class="small" id="e-age"></div><div class="bar" style="margin-top:10px;background:rgba(255,255,255,.2)"><i id="e-bar"></i></div><div class="small" id="e-rate" style="margin-top:6px"></div></div>
   <div class="acard" id="e-elig"></div>
-  <div class="note">Illustrative formula for the prototype only: 40% of average insurable earnings at 500 weeks, plus 1.25% for each further 50 weeks, capped at 60%. The delivered estimator applies the benefit rules NISSS confirms during requirements validation.</div>`,
+  <div class="note">Illustrative formula for the prototype only: 40% of average insurable earnings at 500 weeks, plus 1.25% for each further 50 weeks, capped at 60%. The delivered estimator applies the benefit rules NISSS confirms during requirements validation. Rules are data, so reforms such as the pensionable age moving to 67.5 in 2028 and 68 in 2034 are a configuration change, not a new release.</div>`,
  claims:()=>`<button class="btn gold" data-q="newclaim" style="margin-top:0">Start a new claim</button>
   <h4 style="margin:16px 0 8px">Your claims</h4>${claims.map(c=>`<div class="acard" data-c="${c.id}" style="cursor:pointer"><div class="row"><span><b>${c.type}</b><br><span class="m">${c.id} · ${c.date}</span></span><span class="pill ${c.status>=3?'p-ok':'p-blue'}">${claimSteps[c.status]}</span></div></div>`).join('')}
   <div class="note">Phase 2 · Claims and benefits digitisation.</div>`,
@@ -518,22 +682,24 @@ const views={
   <label class="f">Benefit</label><select class="in" id="ctype"><option>Sickness benefit</option><option>Maternity benefit</option><option>Employment injury benefit</option><option>Funeral grant</option></select>
   <label class="f">First day unable to work</label><input class="in" type="date" id="cdate" value="2026-10-05">
   <label class="f">Medical certificate</label><div class="acard" id="drop" style="text-align:center;border-style:dashed;cursor:pointer">📎 Tap to attach (demo file)</div>
+  <div class="privacy" style="margin-top:-4px;margin-bottom:6px">🔒 Health data (Tier 4): shared only for this claim, encrypted and seen only by NISSS assessors. You can withdraw consent in My data.</div>
   <label class="f">Bank account for payment</label><input class="in" value="Account ending ••1188 (on file)" readonly>
   <label style="display:flex;gap:8px;align-items:flex-start;margin-top:12px;font-size:12.5px"><input type="checkbox" id="decl"> I declare the information is true and complete.</label>
   <button class="btn" id="submitclaim">Submit claim</button>`,
  claim:()=>{const c=claims.find(x=>x.id===window._claim)||claims[0];return `<div class="acard"><h4>${c.type}</h4><div class="m">${c.id} · submitted ${c.date}</div></div>
   <div class="acard">${claimSteps.map((s,i)=>`<div class="row"><span>${i<=c.status?'●':'○'} ${s}</span><span class="m">${i<=c.status?'Done':i===c.status+1?'Next':''}</span></div>`).join('')}</div>
   <button class="btn ghost" data-q="chat">Ask about this claim</button>`},
- more:()=>`<div class="acard">${[['profile','👤','My account'],['card','▣','Digital NIS card'],['clearance','✓','Clearance certificate'],['abroad','✈','Pay from abroad'],['life','🙂','Life certificate (pensioners abroad)'],['caricom','◎','CARICOM service record'],['network','🛡','Secure connection'],['notes','🔔','Notifications'],['support','✆','Customer support'],['info','ℹ','News, FAQs and tips'],['security','🔒','Security and devices']].map(x=>`<div class="row" data-q="${x[0]}" style="cursor:pointer"><span>${x[1]} ${x[2]}</span><span class="m">›</span></div>`).join('')}</div>
+ more:()=>`<div class="acard">${[['profile','👤','My account'],['card','▣','Digital NIS card'],['clearance','✓','Clearance certificate'],['abroad','✈','Pay from abroad'],['life','🙂','Life certificate (pensioners abroad)'],['caricom','◎','CARICOM service record'],['network','🛡','Secure connection'],['notes','🔔','Notifications'],['support','✆','Customer support'],['info','ℹ','News, FAQs and tips'],['security','🔒','Security and devices'],['consent','🛡','My data and consent'],['access','Aa','Accessibility and language'],['helper','♥','Trusted helper']].map(x=>`<div class="row" data-q="${x[0]}" style="cursor:pointer"><span>${x[1]} ${x[2]}</span><span class="m">›</span></div>`).join('')}</div>
   <button class="btn ghost" id="signout">Sign out</button>`,
  notes:()=>`${notes.map((n,i)=>`<div class="acard" style="${n.u?'border-left:4px solid #c7a96b':''}"><div class="row" style="border:0;padding:0"><b>${n.t}</b><span class="m">${n.d}</span></div><div style="font-size:13px;margin-top:4px">${n.b}</div></div>`).join('')}
   <div class="acard"><h4>Alert preferences</h4>${['Push notifications','SMS','Email'].map((c,i)=>`<label class="row"><span>${c}</span><input type="checkbox" ${i<2?'checked':''}></label>`).join('')}</div>`,
  support:()=>`<div class="qa" style="grid-template-columns:repeat(3,1fr)"><button data-q="chat"><span class="ic">💬</span>Chat</button><button id="callback"><span class="ic">✆</span>Call me back</button><button data-q="info"><span class="ic">?</span>FAQs</button></div>
   <div class="acard"><h4>Common questions</h4>${['How do I pay contributions online?','When will my pension be paid?','How do I get a clearance certificate?','How do I update my address?'].map(q=>`<details class="row" style="display:block"><summary style="cursor:pointer">${q}</summary><div class="m" style="margin-top:6px">Answer managed by NISSS through the content management system.</div></details>`).join('')}</div>
-  <div class="acard"><h4>Visit us</h4><div class="m">Branch addresses and opening hours are published by NISSS through the CMS.</div></div>`,
+  <div class="acard"><h4>Visit us</h4><img class="pimg" src="img/nisbuilding.jpg" alt="Frank Walcott Building, NISSS headquarters" loading="lazy"><div style="font-size:13px"><b>Frank Walcott Building</b>, Culloden Road, St. Michael</div><div class="m">Staff can complete any task with you using the same secure app. Opening hours are published by NISSS.</div></div>`,
  chat:()=>`<div id="chatlog"><div class="bubble them">Hi ${member.name.split(' ')[0]}, you're through to NIS customer support. How can we help?</div></div>
   <div style="display:flex;gap:6px;margin-top:10px">${['Payment not showing','Claim status','Update my details'].map(t=>`<button class="chip" data-t="${t}">${t}</button>`).join('')}</div>`,
  info:()=>`<div style="margin-bottom:8px">${['Announcements','FAQs','Videos','Financial tips'].map((f,i)=>`<button class="chip ${i==0?'on':''}">${f}</button>`).join('')}</div>
+  ${lowdata?'':`<div class="acard"><img class="pimg" src="img/chattel.jpg" alt="Colourful chattel house display" loading="lazy"><span class="pill p-grey">Self-employed</span><h4 style="margin-top:6px">Vending at Crop Over? Register free and pay any amount, any time</h4><div class="m">Sample article · published through the CMS</div></div>`}
   ${[['Announcement','New online payment options for self-employed persons','Published by Communications · 1 Oct'],['Financial tip','Five ways to plan for retirement income','Published by Communications · 28 Sep'],['Video','How to read your contribution statement (2 min)','Published by Customer Service · 15 Sep'],['FAQ','What counts as a credited week?','Published by Benefits · 2 Sep']].map(a=>`<div class="acard"><span class="pill p-grey">${a[0]}</span><h4 style="margin-top:6px">${a[1]}</h4><div class="m">${a[2]}</div></div>`).join('')}`,
  profile:()=>`<div class="acard"><div class="row"><span>Name</span><b>${member.name}</b></div><div class="row"><span>NIS number</span><b>${member.nis}</b></div><div class="row"><span>Category</span><b>${member.type}</b></div><div class="row"><span>Mobile</span><b>••• •••42</b></div><div class="row"><span>Email</span><b>demo.member@example.com</b></div><div class="row"><span>Address</span><b>On file</b></div></div>
   <button class="btn ghost" id="edit">Request a change of details</button><div class="note">Changes to sensitive details are verified before they reach NISSS's customer record.</div>`,
@@ -543,9 +709,15 @@ const views={
   <button class="btn ghost" id="signall">Sign out of all devices</button>`
 };
 const binds={
- login:()=>{$('#signin').onclick=()=>go('otp');$('#reg').onclick=()=>toast('Registration verifies your NIS number with NISSS before activation.');},
+ login:()=>{$('#signin').onclick=()=>go('otp');$('#tri').onclick=()=>go('trident');$('#simpleOn').onclick=()=>{simple=true;toast('Simple mode on');render();};$('#reg').onclick=()=>toast('Registration verifies your NIS number with NISSS before activation.');},
  otp:()=>{$('#verify').onclick=()=>{authed=true;stack=[];go('home',false);toast('Signed in securely');}},
  home:()=>{qa();const p=$('#paynow');if(p)p.onclick=()=>go('pay');},
+ simplehome:()=>{qa();const p=$('#s-pay');p.onclick=()=>{if(due().length)go('pay');else toast('Nothing to pay');};$('#s-help').onclick=()=>toast('Call-back requested. We will call you today.');$('#s-read').onclick=speak;$('#s-full').onclick=()=>{simple=false;render();};},
+ trident:()=>{$('#tap').onclick=()=>{$('#tap').innerHTML='<div style="font-size:30px">✓</div><b>Card read</b><div class="note">Identity confirmed by Trident ID</div>';$('#t2').classList.add('on');};
+   $('#trishare').onclick=()=>{$('#t3').classList.add('on');authed=true;stack=[];accessLog.unshift(['Now','Trident ID','Confirmed identity for sign-in','1']);go('home',false);toast('Signed in with Trident ID');};},
+ consent:()=>{$$('[data-tier]').forEach(c=>c.onchange=()=>{consents[c.dataset.tier]=c.checked;toast(c.checked?'Consent given':'Consent withdrawn');});$('#dl').onclick=()=>toast('Your data export is being prepared (demo)');},
+ access:()=>{qa();$('#a-simple').onchange=e=>{simple=e.target.checked;render();};$$('[data-ts]').forEach(b=>b.onclick=()=>{tsize=+b.dataset.ts;$('#screen').style.fontSize='';render();});$('#a-hc').onchange=e=>{hc=e.target.checked;render();};$('#a-low').onchange=e=>{lowdata=e.target.checked;toast(lowdata?'Low-data mode on':'Low-data mode off');};$$('[data-lang]').forEach(b=>b.onclick=()=>{$$('[data-lang]').forEach(x=>x.classList.remove('on'));b.classList.add('on');toast('Language: '+b.dataset.lang+' (demo)');});$('#a-read').onclick=speak;},
+ helper:()=>{const a=$('#h-add');if(a)a.onclick=()=>{helperOn=true;accessLog.unshift(['Now','You','Added trusted helper','2']);render();toast('Invitation sent to your helper');};const o=$('#h-off');if(o)o.onclick=()=>{helperOn=false;render();toast('Helper removed');};},
  card:()=>{$('#wallet').onclick=()=>toast('Pass added to wallet (demo)');},
  clearance:()=>{qa();const g=$('#getcert');if(g)g.onclick=()=>{notes.unshift({t:'Clearance certificate ready',b:'Your NIS clearance certificate is ready to download and share.',d:'Now',u:1});toast('Certificate issued: CLR-2026-'+Math.floor(Math.random()*90000+10000));};},
  abroad:()=>{const due0=due().reduce((a,c)=>a+c.due,0)||486.2,rates={USD:2,CAD:1.47,GBP:2.62,BBD:1};const f=c=>{const v=due0/rates[c];$('#fx').textContent=c+' '+v.toLocaleString('en-GB',{minimumFractionDigits:2,maximumFractionDigits:2});$('#fxn').textContent=c==='BBD'?'Paid in Barbados dollars.':`Illustrative rate: 1 ${c} = BBD ${rates[c].toFixed(2)}. The card issuer may add its own fees.`;};f('USD');
@@ -556,6 +728,7 @@ const binds={
  contrib:()=>{const draw=f=>{$('#clist').innerHTML=contribs.filter(c=>f==='All'||c.status===f).map(c=>`<div class="row"><span>${c.m}<br><span class="m">${c.ref||'Outstanding'}</span></span><span style="text-align:right"><b>${money(c.status==='Paid'?c.amt:c.due)}</b><br><span class="pill ${c.status==='Paid'?'p-ok':'p-warn'}">${c.status}</span></span></div>`).join('')};draw('All');
    $$('[data-f]').forEach(b=>b.onclick=()=>{$$('[data-f]').forEach(x=>x.classList.remove('on'));b.classList.add('on');draw(b.dataset.f)});const p=$('#paydue');if(p)p.onclick=()=>go('pay');},
  pay:()=>{const upd=()=>{const sel=$$('[data-m]').filter(x=>x.checked).map(x=>x.dataset.m);$('#ptot').textContent=money(due().filter(c=>sel.includes(c.m)).reduce((a,c)=>a+c.due,0));};$$('[data-m]').forEach(x=>x.onchange=upd);
+   $('#paycode').onclick=()=>toast('Payment code NIS-7Q4K-82 · valid 7 days at SurePay agents (demo)');
    $('#confirm').onclick=()=>{const sel=$$('[data-m]').filter(x=>x.checked).map(x=>x.dataset.m);if(!sel.length){toast('Select at least one month');return;}let total=0,no='RCP-'+(265000+Math.floor(Math.random()*900));contribs.forEach(c=>{if(sel.includes(c.m)){c.status='Paid';c.amt=c.due;c.ref=no;total+=c.due}});window._rcpt={no,months:sel,total};notes.unshift({t:'Payment received',b:`We received ${money(total)}. Receipt ${no}.`,d:'Now',u:1});go('receipt');}},
  receipt:()=>{qa();$('#share').onclick=()=>toast('Receipt PDF generated (demo)');},
  estimate:()=>{const f=()=>{const dob=+$('#e-dob').value,earn=+$('#e-earn').value,w=+$('#e-weeks').value;$('#e-dob-v').textContent=dob;$('#e-earn-v').textContent=money(earn);$('#e-weeks-v').textContent=w;
@@ -575,9 +748,9 @@ const binds={
 };
 function qa(){$$('#view [data-q]').forEach(b=>b.onclick=()=>go(b.dataset.q));}
 /* jump list */
-const jumpList=[['login','Sign-in'],['home','Dashboard'],['card','NIS card'],['clearance','Clearance'],['abroad','Pay from abroad'],['life','Life certificate'],['caricom','CARICOM record'],['network','Secure connection'],['contrib','Contributions'],['pay','Payment'],['estimate','Pension estimator'],['notes','Notifications'],['support','Support'],['info','Information'],['profile','Account'],['claims','Claims (Phase 2)'],['newclaim','New claim']];
+const jumpList=[['login','Sign-in'],['home','Dashboard'],['card','NIS card'],['clearance','Clearance'],['abroad','Pay from abroad'],['life','Life certificate'],['caricom','CARICOM record'],['network','Secure connection'],['contrib','Contributions'],['pay','Payment'],['estimate','Pension estimator'],['notes','Notifications'],['support','Support'],['info','Information'],['profile','Account'],['claims','Claims (Phase 2)'],['newclaim','New claim'],['trident','Trident ID sign-in'],['simple','Simple mode'],['access','Accessibility'],['helper','Trusted helper'],['consent','My data and consent']];
 $('#jump').innerHTML=jumpList.map(j=>`<button data-r="${j[0]}">${j[1]}</button>`).join('');
-$$('#jump button').forEach(b=>b.onclick=()=>{if(b.dataset.r==='login'){authed=false;stack=[];go('login',false);return;}if(b.dataset.r==='pay'&&!due().length){contribs[0].status='Due';contribs[0].amt=0;}authed=true;stack=b.dataset.r==='home'?[]:['home'];go(b.dataset.r,false);});
+$$('#jump button').forEach(b=>b.onclick=()=>{if(b.dataset.r==='login'||b.dataset.r==='trident'){authed=false;stack=b.dataset.r==='trident'?['login']:[];go(b.dataset.r,false);return;}if(b.dataset.r==='simple'){simple=true;authed=true;stack=[];go('home',false);return;}if(b.dataset.r==='pay'&&!due().length){contribs[0].status='Due';contribs[0].amt=0;}authed=true;stack=b.dataset.r==='home'?[]:['home'];go(b.dataset.r,false);});
 /* ---------- admin ---------- */
 let cms=[{t:'Independence Day office hours',type:'Announcement',a:'Communications',s:'Pending'},{t:'Retirement planning: 5 tips',type:'Financial tip',a:'Communications',s:'Pending'},{t:'How to read your statement',type:'Video',a:'Customer Service',s:'Published'},{t:'What counts as a credited week?',type:'FAQ',a:'Benefits',s:'Published'}];
 let audit=[['09:12','m.brathwaite','Approved FAQ "What counts as a credited week?"'],['08:57','admin.sys','Changed role: content editor → content approver (r.greaves)'],['08:31','c.hinds','Uploaded video "How to read your statement"']];
@@ -611,7 +784,7 @@ function drawMap(){const d=[['Barbados',71,'#00267f'],['United States',11,'#0b4f
  let lx=20;d.forEach((r,i)=>{const col=i%3,row=Math.floor(i/3);s+=`<rect x="${20+col*290}" y="${120+row*34}" width="14" height="14" rx="3" fill="${r[2]}"/><text x="${42+col*290}" y="${132+row*34}" font-size="14" fill="currentColor">${r[0]} · ${r[1]}%</text>`;});$('#map').innerHTML=s;$('#map').style.color=getComputedStyle(document.body).color;}
 function drawInts(){const I=[['NISSS contribution and payment databases','REST/JSON via NISSS API Gateway','Active in prototype (simulated)','#1f7a4d'],['Customer records system','Profile and change requests','Active in prototype (simulated)','#1f7a4d'],['Identity (SaaS IAM)','OAuth 2.0 / OpenID Connect, MFA','Active in prototype (simulated)','#1f7a4d'],['Payment processing platform','Cards and bank, BBD and international cards','Active in prototype (simulated)','#1f7a4d'],['Push, SMS and email','APNs, FCM, SMS gateway, email','Active in prototype (simulated)','#1f7a4d'],['Help desk and support','Chat and call-back tickets','Active in prototype (simulated)','#1f7a4d'],['Document management system','Claim documents, signed uploads','Contract, Phase 2','#1d5fa8'],['Clearance certificate service','Digitised clearance certification (§0.4.2)','Contract, aligned to NISSS project','#1d5fa8'],['Benefits estimator rules','NISSS-approved rule sets','Contract, Phase 1','#1d5fa8'],['Apple Wallet and Google Wallet','Digital NIS card','Optional add-on','#b46b00'],['CARICOM social security data exchange','Insured periods in other member states','Optional add-on, subject to agreements','#b46b00'],['Identity verification for life certificates','Selfie liveness and ID document check','Optional add-on','#b46b00'],['Employer portal and payroll upload','Employer contributions and earnings','Optional add-on','#b46b00'],['Zero-trust staff access and VPN','Admin console and support tools','Contract (staff access)','#1d5fa8']];
  $('#ints').innerHTML=I.map(i=>`<div class="card"><span class="dot" style="background:${i[3]}"></span><div><b>${i[0]}</b><div class="req">${i[1]}</div><span class="pill" style="margin-top:6px;background:${i[3]}1a;color:${i[3]}">${i[2]}</span></div></div>`).join('');}
-const h=(location.hash||'').slice(1);if(['home','app','abroad','int','admin','ops','arch','plan','trace'].includes(h))showSec(h);
+const h=(location.hash||'').slice(1);if(['home','app','everyone','trident','abroad','int','admin','ops','arch','plan','trace'].includes(h))showSec(h);
 })();
 </script>
 </body>
